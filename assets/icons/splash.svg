@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Splash screen version with background -->
+  <defs>
+    <radialGradient id="bgGrad" cx="960" cy="540" r="800" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#1a1a2e"/>
+      <stop offset="100%" stop-color="#09090b"/>
+    </radialGradient>
+
+    <linearGradient id="logoGrad" x1="960" y1="240" x2="960" y2="840" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#8B5CF6"/>
+      <stop offset="50%" stop-color="#3B82F6"/>
+      <stop offset="100%" stop-color="#06B6D4"/>
+    </linearGradient>
+
+    <linearGradient id="logoShine" x1="960" y1="240" x2="960" y2="540" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+
+    <radialGradient id="logoGlow" cx="960" cy="480" r="400" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#8B5CF6" stop-opacity="0.4"/>
+      <stop offset="50%" stop-color="#3B82F6" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#06B6D4" stop-opacity="0"/>
+    </radialGradient>
+
+    <filter id="splashShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="20"/>
+      <feOffset dx="0" dy="15" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.7"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <filter id="bevelLarge">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="8" result="blur"/>
+      <feSpecularLighting in="blur" surfaceScale="10" specularConstant="1.2" specularExponent="30" lighting-color="#ffffff" result="specOut">
+        <fePointLight x="960" y="200" z="400"/>
+      </feSpecularLighting>
+      <feComposite in="specOut" in2="SourceAlpha" operator="in" result="specOut"/>
+      <feComposite in="SourceGraphic" in2="specOut" operator="arithmetic" k1="0" k2="1" k3="1" k4="0"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1920" height="1080" fill="url(#bgGrad)"/>
+
+  <!-- Ambient glow -->
+  <ellipse cx="960" cy="540" rx="600" ry="400" fill="url(#logoGlow)" opacity="0.6"/>
+
+  <!-- Logo centered (scaled up) -->
+  <g transform="translate(704, 284)" filter="url(#splashShadow)">
+    <!-- Shield -->
+    <path d="M 256 0
+             L 410 60
+             C 410 60, 420 70, 420 90
+             L 420 220
+             C 420 280, 380 340, 256 392
+             C 132 340, 92 280, 92 220
+             L 92 90
+             C 92 70, 102 60, 110 60
+             Z"
+          fill="url(#logoGrad)"
+          filter="url(#bevelLarge)"/>
+
+    <path d="M 256 0
+             L 410 60
+             C 410 60, 420 70, 420 90
+             L 420 220
+             C 420 280, 380 340, 256 392
+             C 132 340, 92 280, 92 220
+             L 92 90
+             C 92 70, 102 60, 110 60
+             Z"
+          fill="url(#logoShine)"
+          opacity="0.75"/>
+
+    <!-- A letterform -->
+    <path d="M 256 80 L 330 240 M 256 80 L 182 240 M 227 185 L 285 185"
+          stroke="#ffffff"
+          stroke-width="16"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          fill="none"
+          opacity="0.95"/>
+
+    <!-- Keyhole -->
+    <circle cx="256" cy="220" r="32" fill="#09090b" opacity="0.85"/>
+    <circle cx="256" cy="220" r="30" fill="none" stroke="#06B6D4" stroke-width="3"/>
+
+    <path d="M 244 236
+             L 244 282
+             C 244 287, 249 292, 256 292
+             C 263 292, 268 287, 268 282
+             L 268 236
+             Z"
+          fill="#09090b"
+          opacity="0.85"/>
+
+    <path d="M 244 236
+             L 244 282
+             C 244 287, 249 292, 256 292
+             C 263 292, 268 287, 268 282
+             L 268 236
+             Z"
+          fill="none"
+          stroke="#06B6D4"
+          stroke-width="2.5"/>
+
+    <!-- Highlights -->
+    <ellipse cx="200" cy="75" rx="55" ry="28" fill="#ffffff" opacity="0.3" transform="rotate(-30 200 75)"/>
+  </g>
+
+  <!-- Decorative privacy elements -->
+  <g opacity="0.15" stroke="#8B5CF6" stroke-width="2" fill="none">
+    <circle cx="400" cy="300" r="8"/>
+    <circle cx="1520" cy="300" r="8"/>
+    <circle cx="400" cy="780" r="8"/>
+    <circle cx="1520" cy="780" r="8"/>
+    <line x1="408" y1="300" x2="600" y2="400"/>
+    <line x1="1512" y1="300" x2="1320" y2="400"/>
+    <line x1="408" y1="780" x2="600" y2="680"/>
+    <line x1="1512" y1="780" x2="1320" y2="680"/>
+  </g>
+</svg>

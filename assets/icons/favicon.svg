@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32" height="32" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Optimized for small sizes (16px-32px) -->
+  <defs>
+    <linearGradient id="shieldGrad" x1="256" y1="60" x2="256" y2="452" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#8B5CF6"/>
+      <stop offset="50%" stop-color="#3B82F6"/>
+      <stop offset="100%" stop-color="#06B6D4"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Simplified shield for clarity at small sizes -->
+  <path d="M 256 60
+           L 410 120
+           C 410 120, 420 130, 420 150
+           L 420 280
+           C 420 340, 380 400, 256 452
+           C 132 400, 92 340, 92 280
+           L 92 150
+           C 92 130, 102 120, 110 120
+           Z"
+        fill="url(#shieldGrad)"/>
+
+  <!-- Bold A for visibility -->
+  <path d="M 256 140 L 330 300 M 256 140 L 182 300 M 220 245 L 292 245"
+        stroke="#ffffff"
+        stroke-width="18"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        fill="none"/>
+
+  <!-- Simplified keyhole -->
+  <circle cx="256" cy="290" r="24" fill="#09090b" opacity="0.8"/>
+  <rect x="248" y="300" width="16" height="40" rx="3" fill="#09090b" opacity="0.8"/>
+</svg>

@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="512" height="512" fill="#09090b" rx="0"/>
+
+  <!-- Definitions for gradients, shadows, and effects -->
+  <defs>
+    <!-- Main shield gradient (Purple to Blue to Cyan) -->
+    <linearGradient id="shieldGradient" x1="256" y1="60" x2="256" y2="452" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#8B5CF6"/>
+      <stop offset="50%" stop-color="#3B82F6"/>
+      <stop offset="100%" stop-color="#06B6D4"/>
+    </linearGradient>
+
+    <!-- Metallic shine gradient -->
+    <linearGradient id="shineGradient" x1="256" y1="60" x2="256" y2="280" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.5"/>
+      <stop offset="50%" stop-color="#ffffff" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Inner glow -->
+    <radialGradient id="innerGlow" cx="256" cy="200" r="250" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- Keyhole gradient -->
+    <linearGradient id="keyholeGradient" x1="256" y1="240" x2="256" y2="360" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#09090b" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#09090b" stop-opacity="0.7"/>
+    </linearGradient>
+
+    <!-- Drop shadow -->
+    <filter id="dropShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="8"/>
+      <feOffset dx="0" dy="4" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.5"/>
+      </feComponentTransfer>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Inner shadow for depth -->
+    <filter id="innerShadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="4" result="blur"/>
+      <feOffset in="blur" dx="0" dy="2" result="offsetBlur"/>
+      <feFlood flood-color="#000000" flood-opacity="0.3" result="offsetColor"/>
+      <feComposite in="offsetColor" in2="offsetBlur" operator="in" result="offsetBlur"/>
+      <feComposite in="SourceGraphic" in2="offsetBlur" operator="over"/>
+    </filter>
+
+    <!-- 3D Bevel effect -->
+    <filter id="bevel">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="4" result="blur"/>
+      <feSpecularLighting in="blur" surfaceScale="5" specularConstant="0.75" specularExponent="20" lighting-color="#ffffff" result="specOut">
+        <fePointLight x="256" y="100" z="200"/>
+      </feSpecularLighting>
+      <feComposite in="specOut" in2="SourceAlpha" operator="in" result="specOut"/>
+      <feComposite in="SourceGraphic" in2="specOut" operator="arithmetic" k1="0" k2="1" k3="1" k4="0"/>
+    </filter>
+  </defs>
+
+  <!-- Main shield shape -->
+  <g filter="url(#dropShadow)">
+    <!-- Shield base with 3D effect -->
+    <path d="M 256 60
+             L 410 120
+             C 410 120, 420 130, 420 150
+             L 420 280
+             C 420 340, 380 400, 256 452
+             C 132 400, 92 340, 92 280
+             L 92 150
+             C 92 130, 102 120, 110 120
+             Z"
+          fill="url(#shieldGradient)"
+          filter="url(#bevel)"/>
+
+    <!-- Metallic shine overlay -->
+    <path d="M 256 60
+             L 410 120
+             C 410 120, 420 130, 420 150
+             L 420 280
+             C 420 340, 380 400, 256 452
+             C 132 400, 92 340, 92 280
+             L 92 150
+             C 92 130, 102 120, 110 120
+             Z"
+          fill="url(#shineGradient)"
+          opacity="0.6"/>
+
+    <!-- Inner glow for depth -->
+    <ellipse cx="256" cy="200" rx="140" ry="100" fill="url(#innerGlow)" opacity="0.4"/>
+  </g>
+
+  <!-- Letter "A" integrated into shield -->
+  <g filter="url(#dropShadow)">
+    <!-- A shape with geometric precision -->
+    <path d="M 256 140
+             L 330 300
+             L 300 300
+             L 285 265
+             L 227 265
+             L 212 300
+             L 182 300
+             Z
+             M 235 240
+             L 277 240
+             L 256 185
+             Z"
+          fill="#ffffff"
+          opacity="0.15"/>
+
+    <!-- A outline for definition -->
+    <path d="M 256 140
+             L 330 300
+             M 256 140
+             L 182 300
+             M 227 245
+             L 285 245"
+          stroke="#ffffff"
+          stroke-width="12"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          fill="none"
+          opacity="0.9"/>
+  </g>
+
+  <!-- Keyhole element (ZK encryption symbol) -->
+  <g filter="url(#dropShadow)">
+    <!-- Circular lock top -->
+    <circle cx="256" cy="280" r="28" fill="url(#keyholeGradient)" stroke="#06B6D4" stroke-width="2" opacity="0.9"/>
+
+    <!-- Inner circle highlight -->
+    <circle cx="256" cy="280" r="24" fill="none" stroke="#ffffff" stroke-width="1.5" opacity="0.3"/>
+
+    <!-- Keyhole slot -->
+    <path d="M 246 295
+             L 246 340
+             C 246 345, 251 350, 256 350
+             C 261 350, 266 345, 266 340
+             L 266 295
+             Z"
+          fill="url(#keyholeGradient)"
+          stroke="#06B6D4"
+          stroke-width="1.5"
+          opacity="0.9"/>
+
+    <!-- Inner keyhole highlight -->
+    <rect x="250" y="300" width="12" height="35" rx="2" fill="#ffffff" opacity="0.15"/>
+  </g>
+
+  <!-- Highlight accents for premium look -->
+  <g opacity="0.6">
+    <!-- Top left highlight -->
+    <ellipse cx="200" cy="140" rx="40" ry="20" fill="#ffffff" opacity="0.2" transform="rotate(-30 200 140)"/>
+
+    <!-- Side highlights -->
+    <path d="M 110 160 L 115 160 L 115 260 L 110 260 Z" fill="#ffffff" opacity="0.15"/>
+    <path d="M 400 160 L 405 160 L 405 260 L 400 260 Z" fill="#ffffff" opacity="0.15"/>
+  </g>
+
+  <!-- Subtle privacy pattern overlay -->
+  <g opacity="0.08">
+    <circle cx="150" cy="200" r="3" fill="#ffffff"/>
+    <circle cx="170" cy="220" r="2" fill="#ffffff"/>
+    <circle cx="340" cy="200" r="3" fill="#ffffff"/>
+    <circle cx="360" cy="220" r="2" fill="#ffffff"/>
+    <circle cx="256" cy="380" r="2" fill="#ffffff"/>
+  </g>
+</svg>
