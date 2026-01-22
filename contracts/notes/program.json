@@ -1,0 +1,6 @@
+{
+    "program": "privacybrowser_notes_v1.aleo",
+    "version": "0.1.0",
+    "description": "Private notes contract for AleoBrowser - enables encrypted note storage on Aleo",
+    "license": "MIT"
+}

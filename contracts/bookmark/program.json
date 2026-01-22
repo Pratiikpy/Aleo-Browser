@@ -1,0 +1,6 @@
+{
+    "program": "bookmark_v1.aleo",
+    "version": "0.1.0",
+    "description": "Private bookmarks contract for AleoBrowser - enables encrypted bookmark storage on Aleo",
+    "license": "MIT"
+}
