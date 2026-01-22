@@ -3,8 +3,9 @@ node_modules/
 
 # Build outputs
 dist/
-release/
-*.exe
+
+# Release - keep exe, ignore unpacked folder (too large)
+release/win-unpacked/
 
 # OS files
 .DS_Store
